@@ -34,3 +34,4 @@ toml==0.10.1
 tqdm==4.50.0
 urllib3==1.25.10
 zipp==3.2.0
+security~=1.2.0

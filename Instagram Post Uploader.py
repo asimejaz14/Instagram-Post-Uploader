@@ -1,11 +1,11 @@
 import json
 import os
-import requests
 from PIL import Image
 from instabot import Bot
 from resizeimage import resizeimage
 
 import config
+from security import safe_requests
 
 data = ''
 
@@ -26,7 +26,7 @@ for j_data in json_data.items():
     for image_path in (j_data[1]['images']):
         print("Caption:", caption)
         print(image_path)
-        response = requests.get(image_path)
+        response = safe_requests.get(image_path)
         file = open("1.jpg", "wb")
         file.write(response.content)
         file.close()
